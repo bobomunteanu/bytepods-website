@@ -4,7 +4,7 @@
         <div class="flex flex-row items-center justify-between p-4">
             <a href="/" class="flex text-gray-100 transition duration-1000 ease-in-out group">
                 <img src="/images/site-logo.svg"
-                     class="transition-opacity h-9 w-9 group-hover:opacity-50 group-focus:opacity-70"
+                     style="width: 8vw;"
                      alt="{{ .Site.Title }} Logo" />
                 <div
                      class="mt-1 ml-3 text-xl font-black tracking-tight text-gray-100 uppercase transition-colors group-hover:text-gray-400/60">
@@ -25,8 +25,8 @@
              class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
             <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-indigo-600 focus:bg-indigo-700 focus:outline-none focus:shadow-outline"
                 href="/about/">About</a>
-            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-indigo-600 focus:bg-indigo-700 focus:outline-none focus:shadow-outline"
-                href="/prose/">Prose</a>
+            <!--a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-indigo-600 focus:bg-indigo-700 focus:outline-none focus:shadow-outline"
+                href="/prose/">Prose</a-->
             <div @click.away="open = false" class="relative" x-data="{ open: false }">
                 <button @click="open = !open"
                         class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-indigo-600 focus:bg-indigo-600 focus:outline-none focus:shadow-outline">
@@ -58,7 +58,7 @@
             <div @click.away="open = false" class="relative" x-data="{ open: false }">
                 <button @click="open = !open"
                         class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-indigo-600 focus:bg-indigo-600 focus:outline-none focus:shadow-outline">
-                    <span>Dropdown</span>
+                    <span>Products</span>
                     <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
                          class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
                         <path fill-rule="evenodd"
@@ -76,24 +76,7 @@
                     <div class="px-2 pt-2 pb-4 bg-white rounded-md shadow-lg text-zinc-900">
                         <div class="grid grid-cols-1 gap-4">
                             <a class="flex items-start p-2 bg-transparent rounded-lg group row hover:text-white focus:text-white hover:bg-indigo-600 focus:bg-indigo-700 focus:outline-none focus:shadow-outline"
-                               href="#">
-                                <div class="p-3 text-white bg-indigo-600 rounded-lg group-hover:bg-gray-900">
-                                    <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
-                                         class="w-4 h-4 md:h-6 md:w-6">
-                                        <path
-                                              d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <div class="ml-3">
-                                    <p class="font-semibold">Appearance</p>
-                                    <p class="text-sm">Easy customization</p>
-                                </div>
-                            </a>
-
-                            <a class="flex items-start p-2 bg-transparent rounded-lg group row hover:text-white focus:text-white hover:bg-indigo-600 focus:bg-indigo-700 focus:outline-none focus:shadow-outline"
-                               href="#">
+                               href="https://techassistai.bytepods.com/">
                                 <div class="p-3 text-white bg-indigo-600 rounded-lg group-hover:bg-gray-900">
                                     <svg fill="none" stroke="currentColor" stroke-linecap="round"
                                          stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
@@ -104,13 +87,13 @@
                                     </svg>
                                 </div>
                                 <div class="ml-3">
-                                    <p class="font-semibold">Comments</p>
-                                    <p class="text-sm">Check your latest comments</p>
+                                    <p class="font-semibold">TechassistAI</p>
+                                    <p class="text-sm">Troubleshoot your devices in seconds.</p>
                                 </div>
                             </a>
 
                             <a class="flex items-start p-2 bg-transparent rounded-lg group row hover:text-white focus:text-white hover:bg-indigo-600 focus:bg-indigo-700 focus:outline-none focus:shadow-outline"
-                               href="#">
+                               href="https://hub.docker.com/repository/docker/bogdanmnt/bytepods">
                                 <div class="p-3 text-white bg-indigo-600 rounded-lg group-hover:bg-gray-900">
                                     <svg fill="none" stroke="currentColor" stroke-linecap="round"
                                          stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
@@ -122,8 +105,25 @@
                                     </svg>
                                 </div>
                                 <div class="ml-3">
-                                    <p class="font-semibold">Analytics</p>
-                                    <p class="text-sm">Take a look at your statistics</p>
+                                    <p class="font-semibold">Devpods</p>
+                                    <p class="text-sm">Create your own VPS.</p>
+                                </div>
+                            </a>
+
+                            <a class="flex items-start p-2 bg-transparent rounded-lg group row hover:text-white focus:text-white hover:bg-indigo-600 focus:bg-indigo-700 focus:outline-none focus:shadow-outline"
+                               href="https://bobomunteanu.github.io">
+                                <div class="p-3 text-white bg-indigo-600 rounded-lg group-hover:bg-gray-900">
+                                    <svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                         class="w-4 h-4 md:h-6 md:w-6">
+                                        <path
+                                              d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="font-semibold">About the founder</p>
+                                    <p class="text-sm">Something more about me.</p>
                                 </div>
                             </a>
                         </div>

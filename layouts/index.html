@@ -6,11 +6,11 @@
                 <div class="col-span-6 px-4 text-center sm:mb-6 lg:text-left lg:mb-0">
                     <h1
                         class="mb-2 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl xl:text-6xl dark:text-white">
-                        TailBliss</h1>
+                        Bytepods</h1>
                     <h2 class="pb-2 text-3xl font-light text-gray-800 dark:text-gray-300 md:text-4xl">
-                        Super Fast, and Flexible
+                        Reimagining.
                     </h2>
-                    <a href="https://github.com/nusserstudios/tailbliss"
+                    <a href="https://github.com/bobomunteanu"
                        class="block py-4 mx-auto space-x-4 sm:inline-flex md:inline-flex sm:text-center sm:block">
                         <span
                               class="rounded bg-gray-50 px-2.5 py-1 text-sm font-bold text-gray-900 block max-w-fit mx-auto md:min-w-fit mb-2">
@@ -18,7 +18,7 @@
                         </span>
                         <span
                               class="inline-flex items-center mb-2 space-x-1 text-sm font-medium text-gray-800 dark:text-white md:min-w-fit">
-                            <span>Just shipped version 0.1.0</span>
+                            <span>Evolution awaits</span>
                             <!-- Heroicon name: mini/chevron-right -->
                             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                  fill="currentColor" aria-hidden="true">
@@ -30,8 +30,7 @@
                     </a>
                     <p
                        class="max-w-xl mx-auto mb-6 font-normal text-gray-900 lg:mx-0 xl:mb-2 md:text-lg xl:text-xl dark:text-gray-50">
-                        A Hugo theme built with love, using TailwindCSS 3, Apline.JS, and Hugo
-                        Pipes. Images are optimized for use with Hugo Pipes for WebP format.</p>
+                        Not your ordinary tech startup. We aim to make the next big leap by taking baby steps.</p>
                 </div>
                 <div class="col-span-6">
                     {{ $hero := resources.GetMatch "images/pages/tailbliss-rocket-indigo.png" }}
@@ -39,10 +38,8 @@
                     {{ $thumb := ($hero.Fill "400x400 webp q90") }}
                     {{ $large := ($hero.Fill "576x576 webp q90") }}
 
-                    <img srcset="
-                        {{- with $thumb.RelPermalink -}}{{.}} 400w{{- end -}}
-                        {{- with $large.RelPermalink -}}, {{.}} 576w{{- end -}}" src="{{ $hero.RelPermalink }}"
-                         width="100%" height="" alt="TailBliss Hero" class="w-full max-w-xl mx-auto rounded-lg" />
+                    <img src="/images/index.jpeg"
+                         width="80%" height="" alt="TailBliss Hero" class="w-full max-w-xl mx-auto rounded-lg" />
                 </div>
             </div>
         </div>
@@ -86,7 +83,7 @@
                         </div>
                         <div class="relative px-8">
                             <div>
-                                <img class="h-12" src="images/tailbliss-white.svg" alt="Workcation">
+                                <img class="h-12" src="images/site-logo.svg" alt="Workcation">
                             </div>
                             <blockquote class="mt-8">
                                 <div class="relative text-lg font-medium text-white md:flex-grow">
@@ -104,7 +101,7 @@
 
                                 <footer class="mt-4">
                                     <p class="text-base font-semibold text-gray-200">
-                                        John Doe, CEO at TailBliss
+                                        Bogdan Munteanu, CEO at Bytepods
                                     </p>
                                 </footer>
                             </blockquote>
@@ -120,21 +117,15 @@
                         class="text-3xl font-bold tracking-tight text-gray-900 capitalize dark:text-gray-50 sm:text-4xl">
                         Our mission</h2>
                     <div class="mt-6 space-y-6 text-gray-900 dark:text-white">
-                        <p class="text-lg leading-7">Sagittis scelerisque nulla cursus in enim consectetur
-                            quam. Dictum urna sed consectetur neque tristique pellentesque. Blandit
-                            amet, sed aenean erat arcu morbi. Cursus faucibus nunc nisl netus morbi
-                            vel porttitor vitae ut. Amet vitae fames senectus vitae.
+                        <p class="text-lg leading-7">Bytepods is dedicated to reimagining the way the internet works. Our goal is to create a decentralized, secure, and more equitable internet that empowers individuals and communities. We believe that everyone should have access to the full potential of the internet, without the interference of centralized entities.
+
+                            
                         </p>
-                        <p class="text-lg leading-7">Sollicitudin tristique eros erat odio sed
-                            vitae, consequat turpis elementum. Lorem nibh vel, eget pretium arcu
-                            vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna.
-                            Sollicitudin tristique eroserat odio sed vitae, consequat turpis elementum. Lorem nibh vel,
-                            eget pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna.
+                        <p class="text-lg leading-7">At Bytepods, we are passionate about using cutting-edge technology to make the internet work for everyone. We believe that the internet has the power to transform lives and bring people together, and it's our mission to make that a reality for everyone.
+                            
                         </p>
-                        <p class="text-lg leading-7">Rhoncus nisl, libero egestas diam fermentum
-                            dui. At quis tincidunt vel ultricies. Vulputate aliquet velit faucibus semper.
-                            Pellentesque in venenatis vestibulum consectetur nibh id. In id ut tempus egestas. Enim sit
-                            aliquam nec, a. Morbi enim fermentum lacus in. Viverra.
+                        <p class="text-lg leading-7">     By partnering with like-minded organizations and communities, we are working towards a future where the internet truly serves the needs of all people. Join us on this journey to a better internet, and help us create a more equitable and secure online world for generations to come.
+                        
                         </p>
                     </div>
                 </div>
@@ -143,7 +134,7 @@
     </div>
 
     <!-- Hero section -->
-    <div class="overflow-hidden sm:pt-6 lg:relative">
+    <!--div class="overflow-hidden sm:pt-6 lg:relative">
         <div class="max-w-md px-4 mx-auto sm:max-w-3xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-12 lg:px-8">
             <div>
                 <div class="md:mt-8">
@@ -208,12 +199,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div-->
 
     <!-- Logo cloud section -->
     <div class="max-w-md px-4 mx-auto md:pt-24 md:pb-16 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
         <div class="lg:grid lg:grid-cols-2 lg:items-center lg:gap-24">
-            <div class="mt-12 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
+            <!--div class="mt-12 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
                 <div class="flex justify-center col-span-1 px-8 py-8 bg-gray-50 dark:bg-gray-900/10">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 138 48"
@@ -468,7 +459,7 @@
                         Meet our investors and advisors&nbsp&rarr;
                     </a>
                 </div>
-            </div>
+            </div-->
         </div>
     </div>
 
@@ -583,9 +574,8 @@
                         <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                             Stay Up to Date
                         </h2>
-                        <p class="max-w-2xl mx-auto mt-6 text-lg text-indigo-100">Sagittis
-                            scelerisque nulla cursus in enim consectetur quam. Dictum urna sed
-                            consectetur neque tristique pellentesque.</p>
+                        <p class="max-w-2xl mx-auto mt-6 text-lg text-indigo-100">
+                            We'll keep you posted.</p>
                     </div>
                     <form action="#" class="mt-12 sm:mx-auto sm:flex sm:max-w-lg">
                         <div class="flex-1 min-w-0">

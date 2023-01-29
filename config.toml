@@ -1,5 +1,5 @@
-baseURL = "https://tailbliss.netlify.app/"
-title = "TailBliss"
+baseURL = "https://bytepods.com"
+title = ""
 
 languageCode = "en-us"
 DefaultContentLanguage = "en"
@@ -13,14 +13,12 @@ darkmode_js = ["assets/js/darkmode.js"]
 enableInlineShortcodes = true
 
 [params]
-author = "Nusser Studios"
-authorimage = "../assets/images/global/author.webp"
-github = "https://github.com/nusserstudios"
-facebook = "https://facebook.com/nusserstudios"
-og_image = "/images/tailbliss-cover.png"
-sitename = "TailBliss"
-twitter = "@nusserstudios"
-description = "TailBliss is Hugo Starter"
+author = "Bytepods Inc."
+authorimage = "/images/bytepods.png"
+github = "https://github.com/bobomunteanu"
+og_image = "/images/bytepods.png"
+sitename = ""
+description = "Bytepods"
 
 [markup]
 [markup.goldmark]
@@ -43,10 +41,6 @@ useSessionStorage = false
 disable = false
 simple = false
 [privacy.twitter]
-disable = false
-enableDNT = false
-simple = false
-[privacy.vimeo]
 disable = false
 enableDNT = false
 simple = false

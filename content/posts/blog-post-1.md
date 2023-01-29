@@ -1,257 +1,57 @@
 ---
-title: "Blog Post 1"
+title: "Devpods"
 date: 2022-06-18T11:10:36+08:00
 draft: false
 language: en
-featured_image: ../assets/images/featured/featured-img-placeholder.png
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, odio nec venenatis lacinia, lacus lectus varius nisi, in tristique mi purus ut libero.
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus, odio nec venenatis lacinia, lacus lectus varius nisi, in tristique mi purus ut libero. Vestibulum vel convallis felis. Ut finibus lorem vestibulum lobortis rhoncus.
-author: TailBliss
-authorimage: ../assets/images/global/author.webp
+featured_image: ../assets/images/featured/ssh_tunneling.png
+summary: How the Bytepods' Devpods came to be
+description: Devpods are development enviroments which you can access from anywhere, just as VPS's, but free.
+author: Bogdan Munteanu
+authorimage: ../assets/images/global/bobo.png
 categories: Blog
 tags: Blog
 ---
-__Advertisement :smile:__
 
-- __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image
-  resize in browser.
-- __[babelfish](https://github.com/nodeca/babelfish/)__ - developer friendly
-  i18n with plurals support and easy syntax.
+Nowadays, the configuration of things like the terminal and code editor have become a part of each and every developer's personality, but setting them up can be a huge pain and becomes such a chore at some point. The best solution that i tought of was to create a development enviroment which can be accesed by the developer anytime, anywhere.
 
-You will like those projects!
+'These things already exist', you might say, and it is true, you can subscribe to VPS's and stuff like that, but they can get really expensive, really fast if you want better performance or more storage. So what if you could acces a development enviroment that is hosted on your computer at home or at work from anywhere, even if you don't have a static IP address?
 
----
+According to 'text-davinci-003', by OpenAI, Docker is a containerization platform that enables developers to package applications with all of their dependencies into a single, standardized unit for software development, deployment, and delivery. Docker allows developers to isolate applications into individual containers, enabling them to run on their own without affecting the underlying infrastructure. Docker also provides access to a vast library of pre-built images and containers, making it easier to quickly deploy applications in a variety of environments.
 
-# h1 Heading :blush:
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
+Thus, Docker proved to be the perfect tool to make my idea possible. I used it to automate the creation of a new development enviroment on your computer (which i later named Devpod), which can be easily accessed via SSH. The Devpod uses 'Alpine Linux' at its core, as it is lightweight and it can provide great perfomance no matter the hardware.
 
+In order to make SSH access possible without a static IP, i used ngrok, specifically their SSH Tunneling service.
 
-## Horizontal Rules
+You can see in the following diagram how SSH tunneling works:
 
-***
+![SSH tunneling diagram](/img/ssh_tunneling.png "SSH tunneling diagram")
 
----
+## How to use it
 
-___
+### Setup
 
+First of all, create a ngrok account and get hold of your access token.
 
-## Typographic replacements
+To start the container, execute the following command:
 
-Enable typographer option to see result.
-
-(c) (C) (r) (R) (tm) (TM) (p) (P) +-
-
-test.. test... test..... test?..... test!....
-
-!!!!!! ???? ,,  -- ---
-
-"Smartypants, double quotes" and 'single quotes'
-
-
-## Emphasis
-
-**This is bold text**
-
-__This is bold text__
-
-*This is italic text*
-
-_This is italic text_
-
-~~Strikethrough~~
-
-
-## Blockquotes
-
-
-> Blockquotes can also be nested...
->> ...by using additional greater-than signs right next to each other...
-> > > ...or with spaces between arrows.
-
-
-## Lists
-
-Unordered
-
-+ Create a list by starting a line with `+`, `-`, or `*`
-+ Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
-    * Ac tristique libero volutpat at
-    + Facilisis in pretium nisl aliquet
-    - Nulla volutpat aliquam velit
-+ Very easy!
-
-Ordered
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-
-
-1. You can use sequential numbers...
-1. ...or keep all the numbers as `1.`
-
-Start numbering with offset:
-
-57. foo
-1. bar
-
-
-## Code
-
-Inline `code`
-
-Indented code
-
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
-
-
-Block code "fences"
-
-```
-Sample text here...
+```sh
+sudo docker run -itd --network=bridge -p 4040:4040 -p 22:22 -e NGROK_AUTHTOKEN=YOUR_TOKEN_HERE --name CONTAINER_NAME bogdanmnt/bytepods tcp 22
 ```
 
-Syntax highlighting
+Relpace YOUR_TOKEN_HERE with your ngrok token and CONTAINER_NAME with whatever you want.
 
-``` js
-var foo = function (bar) {
-  return bar++;
-};
+To start the SSH service, run:
 
-console.log(foo(5));
+```sh
+docker exec -itd CONTAINER_NAME /usr/sbin/sshd -D
 ```
 
-## Tables
+### Login details 👋
 
-| Option | Description |
-| ------ | ----------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+Use SSH to access the Devpod: SSH root@ADDRESS -p PORT You can find the ADDRESS and the PORT by going to localhost:4040 on the host machine (store the address and port somewhere, as they will not change for as long as the container is not restarted)
 
-Right aligned columns
+Example:
 
-| Option | Description |
-| ------:| -----------:|
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
-
-
-## Links
-
-[link text](http://dev.nodeca.com)
-
-[link with title](http://nodeca.github.io/pica/demo/ "title text!")
-
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
-
-
-## Images
-
-![Minion](https://octodex.github.com/images/minion.png)
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-
-Like links, Images also have a footnote style syntax
-
-![Alt text][id]
-
-With a reference later in the document defining the URL location:
-
-[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
-
-
-## Plugins
-
-The killer feature of `markdown-it` is very effective support of
-[syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
-
-
-### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
-
-> Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
->
-> Shortcuts (emoticons): :-) :-( 8-) ;)
-
-see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
-
-
-### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
-
-- 19^th^
-- H~2~O
-
-
-### [\<ins>](https://github.com/markdown-it/markdown-it-ins)
-
-++Inserted text++
-
-
-### [\<mark>](https://github.com/markdown-it/markdown-it-mark)
-
-==Marked text==
-
-
-### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
-
-Footnote 1 link[^first].
-
-Footnote 2 link[^second].
-
-Inline footnote^[Text of inline footnote] definition.
-
-Duplicated footnote reference[^second].
-
-[^first]: Footnote **can have markup**
-
-    and multiple paragraphs.
-
-[^second]: Footnote text.
-
-
-### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
-
-Term 1
-
-:   Definition 1
-with lazy continuation.
-
-Term 2 with *inline markup*
-
-:   Definition 2
-
-        { some code, part of Definition 2 }
-
-    Third paragraph of definition 2.
-
-_Compact style:_
-
-Term 1
-  ~ Definition 1
-
-Term 2
-  ~ Definition 2a
-  ~ Definition 2b
-
-
-### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
-
-This is HTML abbreviation example.
-
-It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
-
-*[HTML]: Hyper Text Markup Language
-
-### [Custom containers](https://github.com/markdown-it/markdown-it-container)
-
-::: warning
-*here be dragons*
-:::
+```sh
+ssh root@7.tcp.eu.ngrok.io -p 14163
+```
