@@ -19,6 +19,8 @@ github = "https://github.com/bobomunteanu"
 og_image = "/images/bytepods.png"
 sitename = ""
 description = "Bytepods"
+fullWidthTheme = false
+centerTheme = true
 
 [markup]
 [markup.goldmark]
